@@ -2,7 +2,7 @@
     @apply fixed inset-0 z-100;
     @apply grid place-items-center;
     @apply p-5;
-    @apply bg-[rgb(27_30_45/28%)];
+    @apply bg-modal-backdrop;
     @apply backdrop-blur-md;
     @apply md:p-7.5;
     @apply mobile-landscape:p-2;
@@ -12,10 +12,10 @@
     @apply max-h-[calc(100svh-5.25rem)] w-[min(23rem,100%)] overflow-y-auto;
     @apply p-5;
     @apply text-center;
-    @apply rounded-[0.875rem] border-8 border-[#3026373B] bg-white/46;
+    @apply rounded-panel border-8 border-modal-border bg-modal-surface;
     @apply md:max-h-none md:overflow-visible;
     @apply md:p-7.5;
-    @apply md:rounded-3xl;
+    @apply md:rounded-panel-wide;
     @apply mobile-landscape:max-h-[calc(100svh-1rem)] mobile-landscape:overflow-y-auto;
     @apply mobile-landscape:px-4 mobile-landscape:py-3;
 }
@@ -30,9 +30,8 @@
 
 .result-modal__title {
     @apply m-0;
-    @apply font-pixel text-[3rem];
-    @apply text-[#CE3F36];
-    @apply [.result-modal[data-outcome=victory]_&]:text-[#00687B];
+    @apply font-pixel text-[3rem] text-result-failure;
+    @apply [.result-modal[data-outcome=victory]_&]:text-primary;
     @apply mobile-landscape:text-4xl;
 }
 
@@ -54,11 +53,10 @@
 .result-modal__link {
     @apply block w-fit;
     @apply mx-auto mt-3 mb-0;
-    @apply font-[750] underline underline-offset-[0.1875rem];
-    @apply text-[#3E94A6];
+    @apply font-[750] text-link underline underline-offset-[0.1875rem];
     @apply transition-colors duration-200 ease-out;
-    @apply hover:text-[#2F7F8E];
-    @apply focus-visible:text-[#2F7F8E];
+    @apply hover:text-link-hover;
+    @apply focus-visible:text-link-hover;
     @apply md:mt-4.5;
     @apply mobile-landscape:mt-2;
 }
@@ -93,7 +91,7 @@
     @apply inset-shadow-none;
     @apply flex size-[2.625rem] items-center justify-center;
     @apply p-0;
-    @apply rounded-[0.3125rem] border-2 border-current bg-transparent;
+    @apply rounded-default border-2 border-current bg-transparent;
     @apply transition-[background-color,border-color,color] duration-200 ease-out;
 }
 
@@ -102,22 +100,23 @@
 }
 
 .result-modal__icon-button--share {
-    @apply text-[#00687B];
-    @apply hover:border-[#005463] hover:bg-[#005463] hover:text-white;
-    @apply focus-visible:border-[#023841] focus-visible:bg-[#023841] focus-visible:text-white;
-    @apply active:border-[#023841] active:bg-[#023841] active:text-white;
+    @apply text-primary;
+    @apply hover:border-primary-hover hover:bg-primary-hover hover:text-white;
+    @apply focus-visible:border-primary-active focus-visible:bg-primary-active
+        focus-visible:text-white;
+    @apply active:border-primary-active active:bg-primary-active active:text-white;
 }
 
 .result-modal__icon-button--change {
-    @apply text-[#E75167];
-    @apply hover:border-[#D04257] hover:bg-[#D04257] hover:text-white;
-    @apply focus-visible:border-[#B82D43] focus-visible:bg-[#B82D43] focus-visible:text-white;
-    @apply active:border-[#B82D43] active:bg-[#B82D43] active:text-white;
+    @apply text-secondary;
+    @apply hover:border-secondary-hover hover:bg-secondary-hover hover:text-white;
+    @apply focus-visible:border-secondary-active focus-visible:bg-secondary-active
+        focus-visible:text-white;
+    @apply active:border-secondary-active active:bg-secondary-active active:text-white;
 }
 
 .result-modal__share-status {
     @apply min-h-5;
     @apply mt-2 mb-0;
-    @apply text-sm;
-    @apply text-[#4d566c];
+    @apply text-sm text-text-muted;
 }

@@ -1,7 +1,7 @@
 .intro-screen {
     @apply min-h-svh w-full overflow-y-auto;
     @apply p-5;
-    @apply bg-linear-to-b from-[#A2CEFF] to-[#C7BAD4];
+    @apply bg-linear-to-b from-sky-start to-sky-end;
 }
 
 .intro-screen__panel {
@@ -22,7 +22,7 @@
     @apply w-full;
     @apply mt-6 mb-0 p-3;
     @apply leading-[1.2];
-    @apply rounded-[0.3125rem] bg-[#00687B] text-white;
+    @apply rounded-default bg-primary text-white;
 }
 
 .intro-screen__goal strong {

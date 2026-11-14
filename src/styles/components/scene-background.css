@@ -8,7 +8,7 @@
     @apply mobile-landscape:[--scene-grass-height:2.5rem];
     @apply after:absolute after:inset-0 after:z-2;
     @apply after:content-[''];
-    @apply after:bg-linear-to-b after:from-[rgb(165_194_199/0%)] after:to-[#ffd9d985];
+    @apply after:bg-linear-to-b after:from-scene-fade-start after:to-scene-fade-end;
 }
 
 .scene__town-track,
@@ -95,26 +95,26 @@
         var(--scene-road-border-height) + var(--scene-road-upper-height) +
             var(--scene-road-lower-height)
     );
-    border-top: var(--scene-road-border-height) solid #302638;
+    border-top: var(--scene-road-border-height) solid var(--color-ink);
 }
 
 .scene__road-upper {
     @apply w-full;
     height: var(--scene-road-upper-height);
-    background-color: #929ba9;
+    background-color: var(--color-road-upper);
 }
 
 .scene__road-lower {
     @apply w-full;
     height: var(--scene-road-lower-height);
-    background-color: #536679;
+    background-color: var(--color-road-lower);
 }
 
 .scene__grass {
     --grass-far-x: 0px;
     bottom: 0;
     height: var(--scene-grass-height);
-    background-color: #74c1d8;
+    background-color: var(--color-grass);
 }
 
 .scene__grass::before {

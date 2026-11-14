@@ -20,6 +20,7 @@
 
 .header__life {
     @apply h-auto w-5;
+    @apply text-secondary;
     @apply md:h-5.5 md:w-6.25;
 
     @apply transition-[opacity,filter,transform] duration-200 ease-in-out;
@@ -27,14 +28,13 @@
 }
 
 .header__life--lost {
-    @apply fill-transparent;
+    @apply text-transparent;
 }
 
 .header__hint {
     @apply col-span-2 col-start-1 row-start-2;
     @apply m-0;
-    @apply text-center text-xs leading-[1.2];
-    @apply text-[#00687B];
+    @apply text-center text-xs leading-[1.2] text-primary;
     @apply md:col-auto md:row-auto;
 }
 

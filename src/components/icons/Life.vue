@@ -4,8 +4,7 @@
         width="24"
         height="20"
         viewBox="0 0 25 22"
-        fill="#e75167"
-        stroke="#fff"
+        class="fill-current stroke-white"
     >
         <path
             stroke-linecap="round"

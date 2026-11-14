@@ -1,11 +1,3 @@
-@theme {
-    --font-sans: 'Anonymous Pro', monospace;
-    --font-pixel: 'Pixel Impacted', monospace;
-    --spacing-playfield: 75rem;
-}
-
-@custom-variant mobile-landscape (@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem));
-
 @font-face {
     font-family: 'Anonymous Pro';
     src: url('/fonts/AnonymousPro-Bold.woff') format('woff');
@@ -23,8 +15,8 @@
 }
 
 :root {
-    @apply font-sans;
-    @apply bg-[#eaf2ff] text-[#302637];
+    @apply font-sans text-ink;
+    @apply bg-page;
     font-synthesis: none;
 }
 
@@ -49,7 +41,9 @@ body {
     @apply md:grid md:min-h-screen md:place-items-center md:overflow-visible;
     @apply [&.modal-open]:overflow-hidden;
 
-    @apply bg-[linear-gradient(0deg,#7AB8DE,#7AB8DE),linear-gradient(180deg,#A2CEFF_0%,#C7BAD4_100%)];
+    background-image:
+        linear-gradient(0deg, var(--color-body-base), var(--color-body-base)),
+        linear-gradient(180deg, var(--color-sky-start) 0%, var(--color-sky-end) 100%);
 }
 
 .container {
@@ -60,6 +54,6 @@ body {
 
 .title-gradient {
     @apply font-pixel;
-    @apply bg-linear-[-69deg] from-[#0A6676] to-[#FF4E51] bg-clip-text text-transparent;
+    @apply bg-linear-[-69deg] from-title-start to-title-end bg-clip-text text-transparent;
     @apply brightness-105 saturate-150;
 }

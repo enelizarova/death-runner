@@ -36,18 +36,18 @@
 }
 
 .character-card--designer {
-    @apply text-[#d05052];
-    @apply [--character-card-accent:rgb(208,80,82)];
+    @apply text-character-designer;
+    @apply [--character-card-accent:var(--color-character-designer)];
 }
 
 .character-card--front {
-    @apply text-[#634ab5];
-    @apply [--character-card-accent:#634ab5];
+    @apply text-character-front;
+    @apply [--character-card-accent:var(--color-character-front)];
 }
 
 .character-card--developer {
-    @apply text-[#44826e];
-    @apply [--character-card-accent:#44826e];
+    @apply text-character-developer;
+    @apply [--character-card-accent:var(--color-character-developer)];
 }
 
 .character-card__image {

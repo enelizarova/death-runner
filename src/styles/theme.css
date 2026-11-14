@@ -1,0 +1,42 @@
+@theme {
+    --font-sans: 'Anonymous Pro', monospace;
+    --font-pixel: 'Pixel Impacted', monospace;
+    --spacing-playfield: 75rem;
+
+    --color-page: #eaf2ff;
+    --color-ink: #302637;
+    --color-body-base: #7ab8de;
+    --color-sky-start: #a2ceff;
+    --color-sky-end: #c7bad4;
+    --color-title-start: #0a6676;
+    --color-title-end: #ff4e51;
+    --color-primary: #00687b;
+    --color-primary-hover: #005463;
+    --color-primary-active: #023841;
+    --color-secondary: #e75167;
+    --color-secondary-hover: #d04257;
+    --color-secondary-active: #b82d43;
+    --color-result-failure: #ce3f36;
+    --color-link: #3e94a6;
+    --color-link-hover: #2f7f8e;
+    --color-text-muted: #4d566c;
+    --color-character-designer: #d05052;
+    --color-character-front: #634ab5;
+    --color-character-developer: #44826e;
+    --color-road-upper: #929ba9;
+    --color-road-lower: #536679;
+    --color-grass: #74c1d8;
+    --color-scene-fade-start: rgb(165 194 199 / 0%);
+    --color-scene-fade-end: rgb(255 217 217 / 52%);
+    --color-modal-backdrop: rgb(27 30 45 / 28%);
+    --color-modal-border: rgb(48 38 55 / 23%);
+    --color-modal-surface: rgb(255 255 255 / 46%);
+    --color-button-shadow: rgb(0 0 0 / 25%);
+    --color-focus-ring: rgb(38 123 230 / 35%);
+
+    --radius-default: 0.3125rem;
+    --radius-panel: 0.875rem;
+    --radius-panel-wide: 1.5rem;
+}
+
+@custom-variant mobile-landscape (@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem));

@@ -44,8 +44,7 @@
 .start-controls-hint {
     @apply flex flex-col;
     @apply mt-14 mb-0;
-    @apply text-sm leading-[1.2];
-    @apply text-[#005463];
+    @apply text-sm leading-[1.2] text-primary-hover;
 }
 
 .start-controls-hint strong {
