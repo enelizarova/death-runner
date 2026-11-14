@@ -1,0 +1,196 @@
+.scene {
+    @apply absolute inset-0;
+    @apply overflow-hidden;
+    @apply pointer-events-none;
+    @apply [--scene-grass-height:8.125rem] [--scene-road-border-height:0.125rem]
+        [--scene-road-lower-height:1.625rem] [--scene-road-upper-height:2.375rem];
+    @apply min-[120.0625rem]:[--scene-grass-height:12.5rem];
+    @apply mobile-landscape:[--scene-grass-height:2.5rem];
+    @apply after:absolute after:inset-0 after:z-2;
+    @apply after:content-[''];
+    @apply after:bg-linear-to-b after:from-[rgb(165_194_199/0%)] after:to-[#ffd9d985];
+}
+
+.scene__town-track,
+.scene__tree-track,
+.scene__building-track,
+.scene__cloud-track {
+    @apply absolute left-0;
+    @apply flex w-[200%];
+    @apply will-change-transform;
+    @apply in-[.scene--static]:will-change-auto;
+}
+.scene__building-track {
+    @apply z-3;
+    @apply h-64 w-[400%];
+    @apply md:h-109;
+    @apply mobile-landscape:h-44;
+    bottom: calc(
+        var(--scene-grass-height) + var(--scene-road-border-height) +
+            var(--scene-road-upper-height) + var(--scene-road-lower-height) - 1.125rem
+    );
+}
+
+.scene__building-field {
+    @apply relative;
+    @apply h-full flex-[0_0_25%];
+}
+
+.scene--static .scene__building-track {
+    @apply max-md:portrait:hidden;
+}
+
+.scene__town-track,
+.scene__tree-track {
+    @apply z-2;
+    @apply items-end;
+    bottom: calc(
+        var(--scene-grass-height) + var(--scene-road-border-height) +
+            var(--scene-road-upper-height) + var(--scene-road-lower-height) - 1.125rem
+    );
+}
+
+.scene__town-field,
+.scene__tree-field {
+    @apply relative;
+    @apply flex-[0_0_50%];
+}
+
+.scene__town {
+    @apply block h-auto w-full;
+}
+
+.scene__tree {
+    @apply absolute bottom-0;
+    @apply h-auto max-w-none;
+}
+
+.scene__tree--left {
+    @apply left-0;
+    @apply w-[51.6665%];
+}
+
+.scene__tree--right {
+    @apply right-0;
+    @apply w-[79.222%];
+}
+
+.scene__cloud-track {
+    @apply inset-y-0 z-1;
+}
+
+.scene__cloud-field {
+    @apply relative;
+    @apply flex-[0_0_50%];
+}
+
+.scene__road,
+.scene__grass {
+    @apply absolute inset-x-0 z-3;
+}
+
+.scene__road {
+    bottom: var(--scene-grass-height);
+    height: calc(
+        var(--scene-road-border-height) + var(--scene-road-upper-height) +
+            var(--scene-road-lower-height)
+    );
+    border-top: var(--scene-road-border-height) solid #302638;
+}
+
+.scene__road-upper {
+    @apply w-full;
+    height: var(--scene-road-upper-height);
+    background-color: #929ba9;
+}
+
+.scene__road-lower {
+    @apply w-full;
+    height: var(--scene-road-lower-height);
+    background-color: #536679;
+}
+
+.scene__grass {
+    --grass-far-x: 0px;
+    bottom: 0;
+    height: var(--scene-grass-height);
+    background-color: #74c1d8;
+}
+
+.scene__grass::before {
+    @apply absolute inset-y-0 right-0 left-0;
+    @apply content-[''];
+    @apply pointer-events-none;
+    background-image: url('/assets/grass-pattern.svg');
+    background-repeat: repeat;
+    background-position: var(--grass-far-x) top;
+    background-size: 31.375rem 7.625rem;
+    will-change: background-position;
+}
+
+.scene--static .scene__grass::before {
+    will-change: auto;
+}
+
+.scene__cloud {
+    @apply absolute;
+    @apply h-auto w-[clamp(6.875rem,14vw,14.375rem)];
+    @apply opacity-[0.88];
+}
+
+.scene__cloud--left {
+    @apply top-[8%] left-[4%];
+}
+
+.scene__cloud--center {
+    @apply top-[18%] left-[43%];
+    @apply w-[clamp(5.625rem,11vw,11.25rem)];
+}
+
+.scene__cloud--right {
+    @apply top-[6%] right-[5%];
+    @apply w-[clamp(7.5rem,16vw,16.25rem)];
+}
+
+.scene__building {
+    @apply absolute bottom-0;
+    @apply h-full w-auto max-w-none;
+    @apply max-lg:left-1/2 max-lg:-translate-x-1/2;
+}
+
+.scene__building--left {
+    @apply lg:-translate-x-full;
+    @apply lg:[left:max(0rem,calc((100%-var(--spacing-playfield))/2))];
+}
+
+.scene--static .scene__building--left {
+    @apply max-lg:left-0 max-lg:-translate-x-1/4;
+}
+
+.scene__building--right {
+    @apply lg:[left:min(100%,calc((100%+var(--spacing-playfield))/2))];
+}
+
+.scene--static .scene__building--right {
+    @apply max-lg:right-0 max-lg:left-auto max-lg:translate-x-1/4;
+}
+
+.scene__bushes {
+    @apply absolute bottom-0 z-50;
+    @apply h-71.5 w-full;
+}
+
+.scene__bush {
+    @apply absolute bottom-0;
+}
+
+.scene__bush--left {
+    @apply -translate-x-full;
+    left: max(0rem, calc((100% - var(--spacing-playfield)) / 2));
+    @apply h-52.5 w-140;
+}
+
+.scene__bush--right {
+    left: min(100%, calc((100% + var(--spacing-playfield)) / 2));
+    @apply h-71.5 w-210;
+}

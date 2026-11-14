@@ -1,0 +1,60 @@
+.intro-screen {
+    @apply min-h-svh w-full overflow-y-auto;
+    @apply p-5;
+    @apply bg-linear-to-b from-[#A2CEFF] to-[#C7BAD4];
+}
+
+.intro-screen__panel {
+    @apply flex w-full flex-col items-center;
+    @apply mx-auto pt-12;
+    @apply text-center;
+    @apply md:min-h-[calc(100svh-2.5rem)] md:max-w-[37.5rem] md:justify-center;
+    @apply md:pt-0;
+}
+
+.intro-screen__title {
+    @apply m-0;
+    @apply text-[5.625rem] leading-[0.53];
+    @apply md:text-[5.75rem];
+}
+
+.intro-screen__goal {
+    @apply w-full;
+    @apply mt-6 mb-0 p-3;
+    @apply leading-[1.2];
+    @apply rounded-[0.3125rem] bg-[#00687B] text-white;
+}
+
+.intro-screen__goal strong {
+    @apply whitespace-nowrap;
+}
+
+.intro-screen__story {
+    @apply mt-6;
+    @apply text-base leading-[1.2];
+}
+
+.intro-screen__story p {
+    @apply mt-3 mb-0;
+}
+
+.intro-screen__robot {
+    @apply h-auto w-30;
+    @apply mt-10;
+}
+
+.intro-screen__continue {
+    @apply w-48;
+    @apply mt-10 mb-8;
+    @apply text-2xl;
+}
+
+@media (orientation: landscape) and (max-height: 40rem) {
+    .intro-screen__panel {
+        @apply pt-8;
+    }
+
+    .intro-screen__goal {
+        @apply mt-10;
+    }
+}

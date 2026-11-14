@@ -1,0 +1,14 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@import './base.css';
+@import './components/button.css';
+@import './components/header.css';
+@import './components/intro-screen.css';
+@import './components/character-card.css';
+@import './components/character-picker.css';
+@import './components/game-screen.css';
+@import './components/result-screen.css';
+@import './components/scene-background.css';
+@import './components/selected-character-preview.css';
+@import './components/start-screen.css';

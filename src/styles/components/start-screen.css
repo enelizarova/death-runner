@@ -1,0 +1,90 @@
+.start-screen {
+    --selection-grass-height: 8.125rem;
+    @apply relative;
+    @apply min-h-0 w-full flex-1 overflow-y-auto;
+    @apply px-4;
+    @apply md:[--selection-grass-height:13.75rem];
+    @apply mobile-landscape:[--selection-grass-height:2.5rem];
+}
+
+.start-screen > .scene {
+    --scene-grass-height: var(--selection-grass-height);
+    @apply z-0;
+}
+
+.start-screen > .scene .scene__cloud-track,
+.start-screen > .scene .scene__tree-track,
+.start-screen > .scene .scene__building-track,
+.start-screen > .scene .scene__bushes {
+    @apply hidden;
+}
+
+.start-screen__panel {
+    @apply relative z-4;
+    @apply flex min-h-svh w-full flex-col items-center;
+    @apply mx-auto px-2 pt-12;
+    @apply text-center;
+    @apply md:max-w-[37.5rem];
+    @apply md:pt-24;
+    @apply mobile-landscape:min-h-[calc(100svh-0.5rem)];
+    @apply mobile-landscape:pt-3;
+}
+
+.start-screen__title {
+    @apply m-0;
+    @apply text-[4.5rem] leading-[0.53];
+    @apply md:text-[5.75rem];
+    @apply mobile-landscape:text-[4.5rem];
+}
+
+.start-screen__title br {
+    @apply mobile-landscape:hidden;
+}
+
+.start-controls-hint {
+    @apply flex flex-col;
+    @apply mt-14 mb-0;
+    @apply text-sm leading-[1.2];
+    @apply text-[#005463];
+}
+
+.start-controls-hint strong {
+    @apply mb-3;
+    @apply font-bold;
+}
+
+.start-screen__hero {
+    @apply absolute left-1/2 -translate-x-1/2;
+    @apply h-[7.5rem];
+    bottom: calc(var(--selection-grass-height) + 2.9375rem);
+}
+
+.start-screen__play {
+    @apply absolute bottom-6 left-1/2 z-5 -translate-x-1/2;
+    @apply w-36;
+    @apply text-2xl;
+    @apply md:bottom-16;
+    @apply disabled:cursor-wait;
+    @apply disabled:opacity-[0.68];
+    @apply mobile-landscape:bottom-2;
+    @apply mobile-landscape:w-36;
+    @apply mobile-landscape:py-2.5;
+}
+
+@media (min-width: 48rem) and (max-height: 68rem) {
+    .start-screen {
+        --selection-grass-height: 10rem;
+    }
+
+    .start-screen__panel {
+        @apply pt-8;
+    }
+
+    .start-controls-hint {
+        @apply mt-10;
+    }
+
+    .start-screen__play {
+        @apply bottom-6;
+    }
+}

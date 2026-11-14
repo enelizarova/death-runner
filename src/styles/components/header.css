@@ -1,0 +1,85 @@
+.header {
+    @apply w-full;
+    @apply pt-4;
+    @apply md:pt-7.5;
+}
+
+.header .container {
+    @apply grid grid-cols-[auto_auto] items-center justify-between;
+    @apply gap-x-2 gap-y-2;
+    @apply md:flex;
+    @apply md:gap-6;
+}
+
+.header__lives {
+    @apply col-start-1 row-start-1 flex items-center;
+    @apply gap-1;
+    @apply md:col-auto md:row-auto md:flex-none;
+    @apply md:gap-1.5;
+}
+
+.header__life {
+    @apply h-auto w-5;
+    @apply md:h-5.5 md:w-6.25;
+
+    @apply transition-[opacity,filter,transform] duration-200 ease-in-out;
+    @apply motion-reduce:transition-none;
+}
+
+.header__life--lost {
+    @apply fill-transparent;
+}
+
+.header__hint {
+    @apply col-span-2 col-start-1 row-start-2;
+    @apply m-0;
+    @apply text-center text-xs leading-[1.2];
+    @apply text-[#00687B];
+    @apply md:col-auto md:row-auto;
+}
+
+.header__score {
+    @apply col-start-2 row-start-1 flex min-w-18 items-center justify-self-end;
+    @apply gap-x-5;
+    @apply md:col-auto md:row-auto md:min-w-30 md:justify-self-auto;
+}
+
+.header__score-coin {
+    @apply h-6.25 w-4.75;
+}
+
+.header__score-value {
+    @apply text-right font-pixel text-3xl tracking-[0.02em] uppercase tabular-nums;
+    @apply md:text-[3.75rem];
+}
+
+@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem) {
+    .header {
+        @apply pt-2;
+    }
+
+    .header .container {
+        @apply px-3;
+    }
+
+    .header__hint {
+        @apply hidden;
+    }
+
+    .header__life {
+        @apply h-auto w-5;
+    }
+
+    .header__score {
+        @apply min-w-0;
+        @apply gap-2.5;
+    }
+
+    .header__score-coin {
+        @apply h-auto w-3.5;
+    }
+
+    .header__score-value {
+        @apply text-[2rem];
+    }
+}

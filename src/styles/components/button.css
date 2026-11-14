@@ -1,0 +1,23 @@
+.button {
+    @apply inset-shadow-[0_-0.3125rem_0_0_rgb(0_0_0/25%)];
+    @apply min-w-0;
+    @apply px-4 py-3.5;
+    @apply cursor-pointer;
+    @apply rounded border-0 text-white;
+    @apply transition-[transform,box-shadow,background] duration-200 ease-in-out;
+    @apply motion-reduce:transition-none;
+    @apply focus-visible:outline-3 focus-visible:outline-offset-3
+        focus-visible:outline-[rgb(38_123_230/35%)];
+}
+
+.button--primary {
+    @apply bg-[#00687B];
+    @apply hover:bg-[#005463];
+    @apply active:bg-[#023841];
+}
+
+.button--secondary {
+    @apply bg-[#E75167];
+    @apply hover:bg-[#D04257];
+    @apply active:bg-[#023841];
+}

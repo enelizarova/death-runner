@@ -1,0 +1,123 @@
+.result-modal {
+    @apply fixed inset-0 z-100;
+    @apply grid place-items-center;
+    @apply p-5;
+    @apply bg-[rgb(27_30_45/28%)];
+    @apply backdrop-blur-md;
+    @apply md:p-7.5;
+    @apply mobile-landscape:p-2;
+}
+
+.result-modal__card {
+    @apply max-h-[calc(100svh-5.25rem)] w-[min(23rem,100%)] overflow-y-auto;
+    @apply p-5;
+    @apply text-center;
+    @apply rounded-[0.875rem] border-8 border-[#3026373B] bg-white/46;
+    @apply md:max-h-none md:overflow-visible;
+    @apply md:p-7.5;
+    @apply md:rounded-3xl;
+    @apply mobile-landscape:max-h-[calc(100svh-1rem)] mobile-landscape:overflow-y-auto;
+    @apply mobile-landscape:px-4 mobile-landscape:py-3;
+}
+
+.result-modal__character {
+    @apply block h-auto max-h-24 w-full;
+    @apply mx-auto mb-2.5;
+    @apply md:mb-4;
+    @apply mobile-landscape:max-h-20 mobile-landscape:w-auto;
+    @apply mobile-landscape:mb-1;
+}
+
+.result-modal__title {
+    @apply m-0;
+    @apply font-pixel text-[3rem];
+    @apply text-[#CE3F36];
+    @apply [.result-modal[data-outcome=victory]_&]:text-[#00687B];
+    @apply mobile-landscape:text-4xl;
+}
+
+.result-modal__message {
+    @apply mx-auto mt-2.5 mb-0;
+    @apply md:mt-4;
+    @apply mobile-landscape:mt-2;
+}
+
+.result-modal__score {
+    @apply flex items-center justify-center;
+    @apply mt-3 mb-0 gap-4;
+    @apply font-pixel text-[3.75rem];
+    @apply md:mt-4.5;
+    @apply mobile-landscape:mt-2;
+    @apply mobile-landscape:text-[2.5rem];
+}
+
+.result-modal__link {
+    @apply block w-fit;
+    @apply mx-auto mt-3 mb-0;
+    @apply font-[750] underline underline-offset-[0.1875rem];
+    @apply text-[#3E94A6];
+    @apply transition-colors duration-200 ease-out;
+    @apply hover:text-[#2F7F8E];
+    @apply focus-visible:text-[#2F7F8E];
+    @apply md:mt-4.5;
+    @apply mobile-landscape:mt-2;
+}
+
+.result-modal__button {
+    @apply mt-4;
+    @apply text-lg leading-[1.1] font-normal;
+    @apply md:mt-6;
+    @apply mobile-landscape:mt-2 mobile-landscape:py-2.5;
+}
+
+.result-modal__actions {
+    @apply flex flex-col items-center;
+    @apply mt-4 gap-5;
+    @apply md:mt-6;
+    @apply mobile-landscape:mt-2;
+}
+
+.result-modal__primary-action {
+    @apply w-full;
+    @apply mt-0;
+    @apply md:mt-0;
+    @apply mobile-landscape:mt-0;
+}
+
+.result-modal__icon-actions {
+    @apply flex items-center justify-center;
+    @apply gap-4;
+}
+
+.result-modal__icon-button {
+    @apply inset-shadow-none;
+    @apply flex size-[2.625rem] items-center justify-center;
+    @apply p-0;
+    @apply rounded-[0.3125rem] border-2 border-current bg-transparent;
+    @apply transition-[background-color,border-color,color] duration-200 ease-out;
+}
+
+.result-modal__icon-button svg {
+    @apply size-6;
+}
+
+.result-modal__icon-button--share {
+    @apply text-[#00687B];
+    @apply hover:border-[#005463] hover:bg-[#005463] hover:text-white;
+    @apply focus-visible:border-[#023841] focus-visible:bg-[#023841] focus-visible:text-white;
+    @apply active:border-[#023841] active:bg-[#023841] active:text-white;
+}
+
+.result-modal__icon-button--change {
+    @apply text-[#E75167];
+    @apply hover:border-[#D04257] hover:bg-[#D04257] hover:text-white;
+    @apply focus-visible:border-[#B82D43] focus-visible:bg-[#B82D43] focus-visible:text-white;
+    @apply active:border-[#B82D43] active:bg-[#B82D43] active:text-white;
+}
+
+.result-modal__share-status {
+    @apply min-h-5;
+    @apply mt-2 mb-0;
+    @apply text-sm;
+    @apply text-[#4d566c];
+}

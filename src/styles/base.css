@@ -1,0 +1,65 @@
+@theme {
+    --font-sans: 'Anonymous Pro', monospace;
+    --font-pixel: 'Pixel Impacted', monospace;
+    --spacing-playfield: 75rem;
+}
+
+@custom-variant mobile-landscape (@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem));
+
+@font-face {
+    font-family: 'Anonymous Pro';
+    src: url('/fonts/AnonymousPro-Bold.woff') format('woff');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Pixel Impacted';
+    src: url('/fonts/Pixel_Impacted_Regular.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+}
+
+:root {
+    @apply font-sans;
+    @apply bg-[#eaf2ff] text-[#302637];
+    font-synthesis: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    @apply flex min-h-svh w-full flex-col;
+}
+
+body {
+    @apply block min-h-svh min-w-80 overflow-hidden;
+    @apply m-0;
+    @apply md:grid md:min-h-screen md:place-items-center md:overflow-visible;
+    @apply [&.modal-open]:overflow-hidden;
+
+    @apply bg-[linear-gradient(0deg,#7AB8DE,#7AB8DE),linear-gradient(180deg,#A2CEFF_0%,#C7BAD4_100%)];
+}
+
+.container {
+    @apply w-full max-w-336;
+    @apply mx-auto px-5;
+    @apply md:px-8;
+}
+
+.title-gradient {
+    @apply font-pixel;
+    @apply bg-linear-[-69deg] from-[#0A6676] to-[#FF4E51] bg-clip-text text-transparent;
+    @apply brightness-105 saturate-150;
+}

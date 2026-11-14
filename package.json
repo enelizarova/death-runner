@@ -1,0 +1,35 @@
+{
+    "name": "death-runner",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "assets:optimize": "svgo --config svgo.config.mjs --folder public/assets --recursive --quiet",
+        "format": "prettier --write . && node scripts/format-css.mjs --write",
+        "format:check": "prettier --check . && node scripts/format-css.mjs --check",
+        "format:css": "node scripts/format-css.mjs --write",
+        "format:css:check": "node scripts/format-css.mjs --check",
+        "typecheck": "vue-tsc --noEmit",
+        "test": "node --test",
+        "preview": "vite preview",
+        "package": "npm run build && cd dist && bestzip ../death-runner.zip *"
+    },
+    "dependencies": {
+        "@vercel/og": "^1.0.3",
+        "vue": "^3.5.44"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.4",
+        "@vitejs/plugin-vue": "^6.0.10",
+        "bestzip": "^2.2.1",
+        "prettier": "^3.9.10",
+        "prettier-plugin-tailwindcss": "^0.8.1",
+        "svgo": "^4.1.0",
+        "tailwindcss": "^4.3.4",
+        "typescript": "^6.0.3",
+        "vite": "^7.1.12",
+        "vue-tsc": "^3.3.14"
+    }
+}

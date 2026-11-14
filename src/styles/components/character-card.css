@@ -1,0 +1,82 @@
+.character-card {
+    @apply relative;
+    @apply flex min-w-0 flex-col items-center;
+    @apply cursor-pointer;
+    @apply border-none bg-transparent;
+    @apply shadow-none;
+    @apply motion-reduce:transition-none;
+}
+
+.character-card__image-wrapper {
+    @apply relative;
+    @apply flex size-20 items-end justify-center;
+    @apply rounded-full bg-transparent;
+    @apply transition-colors duration-200 ease-in-out;
+    @apply isolate;
+
+    @apply bg-(--character-card-accent)/38 outline outline-offset-4 outline-transparent;
+
+    @apply after:absolute after:top-[calc(100%+0.5rem)] after:left-1/2 after:z-0
+        after:-translate-x-1/2;
+    @apply after:h-2 after:w-4 after:content-[''];
+    @apply after:bg-(--character-card-accent);
+    @apply after:opacity-0 after:transition-opacity after:duration-200 after:ease-in-out;
+    @apply after:[clip-path:polygon(50%_0,100%_100%,0_100%)];
+
+    @apply [.character-card:hover_&]:outline-(--character-card-accent);
+    @apply [.character-card:hover_&]:after:opacity-100;
+    @apply [.character-card:focus-visible_&]:outline-(--character-card-accent);
+    @apply [.character-card:focus-visible_&]:after:opacity-100;
+
+    @apply in-[.character-card--selected]:outline-(--character-card-accent);
+    @apply in-[.character-card--selected]:after:opacity-100;
+
+    @apply motion-reduce:transition-none;
+    @apply after:motion-reduce:transition-none;
+}
+
+.character-card--designer {
+    @apply text-[#d05052];
+    @apply [--character-card-accent:rgb(208,80,82)];
+}
+
+.character-card--front {
+    @apply text-[#634ab5];
+    @apply [--character-card-accent:#634ab5];
+}
+
+.character-card--developer {
+    @apply text-[#44826e];
+    @apply [--character-card-accent:#44826e];
+}
+
+.character-card__image {
+    @apply relative z-1;
+    @apply size-18;
+    @apply transition-transform duration-200 ease-in-out;
+    @apply [.character-card:hover_&]:scale-105;
+    @apply [.character-card:focus-visible_&]:scale-105;
+    @apply motion-reduce:transition-none;
+}
+
+.character-card__name {
+    @apply mt-4;
+    @apply font-pixel text-3xl;
+}
+
+@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem) {
+    .character-card__image-wrapper {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    .character-card__image {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .character-card__name {
+        margin-top: 0.75rem;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,36 @@
+.game-screen {
+    @apply relative;
+    @apply flex min-h-0 w-full flex-1 flex-col;
+}
+
+.game-screen__stage {
+    @apply relative;
+    @apply min-h-0 w-full flex-1 overflow-x-hidden overflow-y-visible;
+    @apply cursor-pointer touch-manipulation;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.game-screen__viewport {
+    @apply absolute inset-0 z-4;
+    @apply w-full;
+}
+
+.game-screen__canvas {
+    @apply block h-full w-full;
+    @apply bg-transparent;
+}
+
+.game-screen__controls {
+    @apply hidden;
+    @apply md:absolute md:bottom-4 md:left-1/2 md:z-5 md:-translate-x-1/2;
+    @apply md:flex md:w-[calc(100%-2rem)] md:max-w-playfield md:justify-center;
+    @apply md:gap-2.5;
+}
+
+@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem) {
+    .game-screen__controls {
+        display: none;
+    }
+}

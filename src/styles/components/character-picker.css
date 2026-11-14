@@ -1,0 +1,19 @@
+.character-picker {
+    @apply flex flex-col;
+    @apply mt-10 gap-3;
+}
+
+.character-picker__wrapper {
+    @apply flex items-center justify-center;
+    @apply gap-5;
+}
+
+@media (orientation: landscape) and (max-width: 59.375rem) and (max-height: 31.25rem) {
+    .character-picker {
+        @apply mt-3 gap-2;
+    }
+
+    .character-picker__wrapper {
+        @apply gap-8;
+    }
+}

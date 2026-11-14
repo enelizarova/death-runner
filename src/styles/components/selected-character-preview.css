@@ -1,0 +1,15 @@
+.selected-character-preview {
+    @apply relative;
+    @apply flex items-end justify-center;
+    @apply m-0;
+}
+
+.selected-character-preview__shadow {
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2;
+    @apply h-auto;
+}
+
+.selected-character-preview__image {
+    @apply relative z-1;
+    @apply h-full w-auto;
+}
